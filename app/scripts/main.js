@@ -18,10 +18,10 @@ $(document).ready(function(){
   /*  End Ticket Table */
 
   /* Responsive menu - my plugin  */
-  var n = 6;
   $(window).resize(function(){
 
     if ($(window).width() <= 740){
+      //var n = 6;
       $('.main-menu li:nth-child(6)').css('display', 'none');
       $('.submenu li:nth-child(6)').css('display', 'block');
     } else {
@@ -29,14 +29,105 @@ $(document).ready(function(){
       $('.submenu li:nth-child(6)').css('display', 'none');
     }
 
-    /*if ($(window).width() <= 740){
-    $('.main-menu li:nth-child(k)').css('display', 'none');
+    if ($(window).width() <= 650){
+      //n = n -1; ('+n+')
+      $('.main-menu li:nth-child(5)').css('display', 'none');
+      $('.submenu li:nth-child(5)').css('display', 'block');
+    } else {
+      //n = n +1;
+      $('.main-menu li:nth-child(5)').css('display', 'inline-block');
+      $('.submenu li:nth-child(5)').css('display', 'none');
+    }
+
+    if ($(window).width() <= 580){
+      $('.main-menu li:nth-child(4)').css('display', 'none');
+      $('.submenu li:nth-child(4)').css('display', 'block');
+    } else {
+      $('.main-menu li:nth-child(4)').css('display', 'inline-block');
+      $('.submenu li:nth-child(4)').css('display', 'none');
+    }
+
+    if ($(window).width() <= 512){
+      $('.main-menu li:nth-child(3)').css('display', 'none');
+      $('.submenu li:nth-child(3)').css('display', 'block');
+    } else {
+      $('.main-menu li:nth-child(3)').css('display', 'inline-block');
+      $('.submenu li:nth-child(3)').css('display', 'none');
+    }
+
+    if ($(window).width() <= 380){
+      $('.main-menu li:nth-child(2)').css('display', 'none');
+      $('.submenu li:nth-child(2)').css('display', 'block');
+    } else {
+      $('.main-menu li:nth-child(2)').css('display', 'inline-block');
+      $('.submenu li:nth-child(2)').css('display', 'none');
+    }
+
+    if ($(window).width() > 740){
+      $('.secondary-submenu > a').addClass('inactive-submenu');
+    } else {
+      $('.secondary-submenu > a').removeClass('inactive-submenu');
+    }
+
+  });
+  /*-------without resize-------------*/
+  if ($(window).width() <= 740){
+    //var n = 6;
+    $('.main-menu li:nth-child(6)').css('display', 'none');
+    $('.submenu li:nth-child(6)').css('display', 'block');
   } else {
-  $('.main-menu li:nth-child(k)').css('display', 'inline-block');
-}*/
+    $('.main-menu li:nth-child(6)').css('display', 'inline-block');
+    $('.submenu li:nth-child(6)').css('display', 'none');
+  }
 
+  if ($(window).width() <= 650){
+    //n = n -1; ('+n+')
+    $('.main-menu li:nth-child(5)').css('display', 'none');
+    $('.submenu li:nth-child(5)').css('display', 'block');
+  } else {
+    //n = n +1;
+    $('.main-menu li:nth-child(5)').css('display', 'inline-block');
+    $('.submenu li:nth-child(5)').css('display', 'none');
+  }
+
+  if ($(window).width() <= 580){
+    $('.main-menu li:nth-child(4)').css('display', 'none');
+    $('.submenu li:nth-child(4)').css('display', 'block');
+  } else {
+    $('.main-menu li:nth-child(4)').css('display', 'inline-block');
+    $('.submenu li:nth-child(4)').css('display', 'none');
+  }
+
+  if ($(window).width() <= 512){
+    $('.main-menu li:nth-child(3)').css('display', 'none');
+    $('.submenu li:nth-child(3)').css('display', 'block');
+  } else {
+    $('.main-menu li:nth-child(3)').css('display', 'inline-block');
+    $('.submenu li:nth-child(3)').css('display', 'none');
+  }
+
+  if ($(window).width() <= 380){
+    $('.main-menu li:nth-child(2)').css('display', 'none');
+    $('.submenu li:nth-child(2)').css('display', 'block');
+  } else {
+    $('.main-menu li:nth-child(2)').css('display', 'inline-block');
+    $('.submenu li:nth-child(2)').css('display', 'none');
+  }
+
+  /* End Responsive menu - my plugin  */
+
+  $('.secondary-submenu a').click(function(){
+    $('.submenu').slideToggle('fast');
+  });
+
+  if ($(window).width() > 740){
+    $('.secondary-submenu > a').addClass('inactive-submenu');
+  } else {
+    $('.secondary-submenu > a').removeClass('inactive-submenu');
+  }
+
+$('section, .main-menu').click(function(){
+  $('.submenu').hide();
 });
-/* End Responsive menu - my plugin  */
-
 
 });

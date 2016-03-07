@@ -124,10 +124,16 @@ header {
       transition: .05s;
     }
   }
+  .inactive-submenu {
+    pointer-events: none;
+    cursor: none;
+    color: #666;
+  }
 }
 
 .submenu {
   position: absolute;
+  display: none;
   background-color: #252525;
   top: 80px;
   right: 0;
@@ -145,6 +151,9 @@ header {
       &:hover {
         background-color: lighten(#252525, 10%);
         transition: .05s;
+      }
+      &:first-child {
+        border-top: 1px solid #fff;
       }
     }
   }
