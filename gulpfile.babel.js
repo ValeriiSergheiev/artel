@@ -166,3 +166,15 @@ gulp.task('build', ['html', 'images', 'fonts', 'extras'], () => {
 gulp.task('default', ['clean'], () => {
   gulp.start('build');
 });
+
+/*  Sprites */
+var spritesmith = require('gulp.spritesmith');
+
+gulp.task('sprite', function () {
+  var spriteData = gulp.src('app/images/sprites/*.png').pipe(spritesmith({
+    imgName: '../images/sprite.png',
+    cssName: '_sprite.scss'
+  }));
+  spriteData.img.pipe(gulp.dest('app/images/'));
+  spriteData.css.pipe(gulp.dest('app/styles/'));
+});
